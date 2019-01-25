@@ -76,7 +76,7 @@ def mincut(connections):
 
 if __name__ == '__main__':
     lines = []
-    with open(name=FILE) as tsv:
+    with open(file=FILE) as tsv:
         for line in csv.reader(tsv, dialect="excel-tab"):
             lines.append(line)
 
