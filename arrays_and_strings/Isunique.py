@@ -1,5 +1,5 @@
 
-def isunique(ustring):
+def is_unique(ustring):
     if isinstance(ustring, str):
         unique = dict()
         for c in ustring:  # enumerating through all characters
@@ -12,7 +12,7 @@ def isunique(ustring):
         return False
 
 
-def isuniquerestrictive(ustring):
+def is_unique_restrictive(ustring):
     if isinstance(ustring, str):
         strlen = len(ustring)
         ustring = ''.join(sorted(ustring))
@@ -24,4 +24,4 @@ def isuniquerestrictive(ustring):
 
 
 if __name__ == '__main__':
-    print(isuniquerestrictive("1232"))
+    print(is_unique_restrictive("1232"))

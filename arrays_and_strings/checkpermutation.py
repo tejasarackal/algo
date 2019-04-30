@@ -1,5 +1,5 @@
 
-def checkpermutation(str1, str2):
+def check_permutation(str1, str2):
 
     if isinstance(str1, str) and isinstance(str2, str):
         if len(str1) == len(str2):
@@ -22,4 +22,4 @@ def checkpermutation(str1, str2):
 
 
 if __name__ == '__main__':
-    print(checkpermutation("1232","2124"))
+    print(check_permutation("1232","2124"))
