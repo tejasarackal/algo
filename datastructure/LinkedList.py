@@ -8,14 +8,17 @@ class LinkedList:
     def __init__(self):
         self.root = None
 
-    def printList(self):
+    def __str__(self):
         next = self.root
         printStr = ''
         while next:
             printStr += str(next.data) + '->'
             next = next.next
 
-        print(printStr[:-2])
+        if len(printStr) > 2:
+            return printStr[:-2]
+        else:
+            return printStr
 
 
 if __name__ == '__main__':
@@ -31,9 +34,9 @@ if __name__ == '__main__':
 
     l = LinkedList()
     l.root = root
-    l.printList()
+    print(l)
 
     d.next = Node('e')
     d.next.next = Node('f')
 
-    l.printList()
+    print(l)

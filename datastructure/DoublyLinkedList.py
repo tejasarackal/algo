@@ -9,7 +9,7 @@ class DoublyLinkedList:
     def __init__(self):
         self.root = None
 
-    def printList(self):
+    def __str__(self):
         next = self.root
         printStr = ''
         while next:
@@ -17,7 +17,9 @@ class DoublyLinkedList:
             next = next.next
 
         if len(printStr) > 4:
-            print(printStr[:-4])
+            return printStr[:-4]
+        else:
+            return printStr
 
     def push(self, node_):
         if self.root:
@@ -127,33 +129,33 @@ if __name__ == '__main__':
     dl = DoublyLinkedList()
 
     orderedInsert(dl, g)
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, f)
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, c)
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, d)
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, e)
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, b)
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, a)
-    dl.printList()
+    print(dl)
 
     dl.deleteNode(d)
     dl.deleteNode(b)
 
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, d)
-    dl.printList()
+    print(dl)
 
     orderedInsert(dl, b)
-    dl.printList()
+    print(dl)
