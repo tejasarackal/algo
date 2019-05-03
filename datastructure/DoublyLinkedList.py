@@ -100,26 +100,60 @@ class DoublyLinkedList:
             nextNode.prev = prevNode
 
 
+def orderedInsert(dl: DoublyLinkedList, node_: Node):
+    head = dl.root
+    current_value = node_.data
+
+    if head:
+        if current_value > head.data:
+            while current_value > head.data:
+                head = head.next
+            dl.insertAfter(head.prev, node_)
+        else:
+            dl.push(node_)
+    else:
+        dl.push(node_)
+
+
 if __name__ == '__main__':
-    d = DoublyLinkedList()
-    d.push(Node('c'))
-    d.push(Node('b'))
     a = Node('a')
-    d.push(a)
+    b = Node('b')
+    c = Node('c')
+    d = Node('d')
+    e = Node('e')
+    f = Node('f')
+    g = Node('g')
 
-    d.printList()
+    dl = DoublyLinkedList()
 
-    d.deleteNode(a)
-    d.printList()
+    orderedInsert(dl, g)
+    dl.printList()
 
-    dd = Node('d')
-    d.append(dd)
-    d.append(Node('e'))
-    d.push(a)
+    orderedInsert(dl, f)
+    dl.printList()
 
-    d.printList()
-    d.deleteNode(dd)
+    orderedInsert(dl, c)
+    dl.printList()
 
-    d.printList()
-    d.deleteNode()
+    orderedInsert(dl, d)
+    dl.printList()
 
+    orderedInsert(dl, e)
+    dl.printList()
+
+    orderedInsert(dl, b)
+    dl.printList()
+
+    orderedInsert(dl, a)
+    dl.printList()
+
+    dl.deleteNode(d)
+    dl.deleteNode(b)
+
+    dl.printList()
+
+    orderedInsert(dl, d)
+    dl.printList()
+
+    orderedInsert(dl, b)
+    dl.printList()
