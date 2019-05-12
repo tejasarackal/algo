@@ -24,17 +24,18 @@
 
 
 def kadaneAlgorithm(arr):
-    sum_arr, m_sum, g_max = list(), 0, 0
+    sum_arr, m_sum = list(), 0
 
     for elem in arr:
         m_sum += elem
         sum_arr.append(m_sum)
 
-    m_sum = 0
-    print(sum_arr)
+    init_val = arr[0]
+    g_max = m_sum = init_val
+
     for i, sum in enumerate(sum_arr):
         m_sum += arr[i]
-        if 0 < i < len(sum_arr):
+        if 0 < i < len(sum_arr) - 1:
             if sum_arr[i - 1] > sum and sum < sum_arr[i + 1]: # local minima
                 m_sum = max(sum, 0)
         g_max = max(g_max, m_sum)
@@ -42,4 +43,4 @@ def kadaneAlgorithm(arr):
     return g_max
 
 if __name__ == '__main__':
-    print(kadaneAlgorithm([-1,-2,-3,-4, 7, 8, -3, -4, 9, 4]))
+    print(kadaneAlgorithm([-1, -2, -3, -4]))
