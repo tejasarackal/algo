@@ -20,4 +20,4 @@ def return_kth_last(ls: sllist, k: int):
 
 if __name__ == '__main__':
     ls = sllist([1, 1, 2, 2, 5, 4, 4, 4, 5, 6])
-    print(return_kth_last(ls, 1))
+    print(return_kth_last(ls, 10))

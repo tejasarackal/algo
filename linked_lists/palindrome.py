@@ -2,20 +2,26 @@ from llist import sllist
 
 
 def palindrome(ls: sllist) -> bool:
-    ch_freq, _len = dict(), 0
-    counter = ls.first
+    slow, fast = ls.first, ls.first
+    stack_ = []
 
-    while counter:
-        ch_freq[_len] = counter.value
-        _len, counter = _len + 1, counter.next
+    while fast.next and fast.next.next:
+        stack_.append(slow.value)
+        slow = slow.next
+        fast = fast.next.next
 
-    for i in range(int((_len + 1) / 2)):
-        if ch_freq[i] != ch_freq[_len - 1 - i]:
+    if fast.next:
+        stack_.append(slow.value)
+    slow = slow.next
+
+    while stack_ and slow:
+        if slow.value != stack_.pop():
             return False
+        slow = slow.next
 
-    return True
+    return len(stack_) == 0
 
 
 if __name__ == '__main__':
-    ls = sllist(['a', 'b', 'd', 'a', 'b'])
+    ls = sllist(['b'])
     print(palindrome(ls))

@@ -6,19 +6,31 @@ def add_lists(list1: sllist, list2: sllist) -> sllist:
 
     while counter1 and counter2:
         counter1.value += counter2.value + carry
-        carry = int(counter1.value / 10)
+        carry = counter1.value // 10
         counter1.value %= 10
 
         counter1 = counter1.next
         counter2 = counter2.next
 
-    if counter1 and carry == 1:
-        counter1.value += 1
+    while counter1:
+        if carry == 0:
+            break
+        counter1.value += carry
+        carry = counter1.value // 10
+        counter1.value %= 10
+        counter1 = counter1.next
 
     while counter2:
-        list1.appendright(counter2.value + carry)
-        carry = 0
+        if carry == 0:
+            list1.appendright(counter2.value)
+        else:
+            sum = counter2.value + carry
+            list1.appendright(sum % 10)
+            carry = sum // 10
         counter2 = counter2.next
+
+    if carry == 1:
+        list1.appendright(carry)
 
     return list1
 
@@ -38,7 +50,7 @@ def add_list_reversed(list1: sllist, list2: sllist) -> sllist:
 
     while st1 and st2:
         add = st1.pop() + st2.pop() + carry
-        carry = int(add / 10)
+        carry = add // 10
         add %= 10
 
         st3.append(add)
@@ -61,5 +73,5 @@ def add_list_reversed(list1: sllist, list2: sllist) -> sllist:
 
 
 if __name__ == '__main__':
-    ls1, ls2 = sllist([7,2]), sllist([1,2,5])
-    print(add_list_reversed(ls1, ls2))
+    ls1, ls2 = sllist([4,5,4]), sllist([5,6,6])
+    print(f'{ls1} + {ls2} = {add_list_reversed(ls1, ls2)}')
