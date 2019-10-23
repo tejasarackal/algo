@@ -124,7 +124,7 @@ It’s important for any engineer, even the senior ones, to brush up on their co
     </li>
     <li>
         <strong>Heap:</strong>
-        <br/>Use a heap anytime you want to keep track of a “top” or “min” in a list of size n
+        <br/>Use a heap anytime you want to keep track of a “top” or “min” in a list
         <br/><br/>
         <ul>
             <li> Understand priority queue</li>
