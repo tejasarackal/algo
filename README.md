@@ -196,4 +196,115 @@ It’s important for any engineer, even the senior ones, to brush up on their co
         </ul>
         <br/><br/>
     </li>
+    <li>
+        In place reversal of linked list: <br/> This pattern reverses one node at a time starting with one variable (current) pointing to the head of the linked list, and one variable (previous) will point to the previous node that you have processed. In a lock-step manner, you will reverse the current node by pointing it to the previous before moving on to the next node. Also, you will update the variable “previous” to always point to the previous node that you have processed.
+        <br/><br/>
+        <ul>
+            <li> Reverse a sub-list (medium) </li>
+            <li> Reverse every k element sublist (medium) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        Tree BFS: <br/> The Tree BFS pattern works by pushing the root node to the queue and then continually iterating until the queue is empty. For each iteration, we remove the node at the head of the queue and “visit” that node. After removing each node from the queue, we also insert all of its children into the queue.
+        <br/><br/>
+        <ul>
+            <li> Binary Tree level order traversal (easy) </li>
+            <li> Zigzag traversal (medium) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        Tree DFS: <br/> The Tree DFS pattern works by starting at the root of the tree, if the node is not a leaf you need to do three things:
+        <ol>
+            <li> Decide whether to process the current node now (pre-order), or between processing two children (in-order) or after processing both children (post-order).</li>
+            <li> Make two recursive calls for both the children of the current node to process them.</li>
+        </ol>
+        <br/>
+        <ul>
+            <li> Binary Tree level order traversal (easy) </li>
+            <li> Zigzag traversal (medium) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        Two Heaps: <br/> This pattern uses two heaps; A Min Heap to find the smallest element and a Max Heap to find the biggest element. The pattern works by storing the first half of numbers in a Max Heap, this is because you want to find the largest number in the first half. You then store the second half of numbers in a Min Heap, as you want to find the smallest number in the second half. At any time, the median of the current list of numbers can be calculated from the top element of the two heaps.
+        <br/><br/>
+        <ul>
+            <li> Find median of a number stream (medium) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        Subsets: <br/> The pattern looks like this: <br/>Given a set of [1, 5, 3]<br/>
+        <ol> 
+            <li> Start with an empty set: [[]] </li>
+            <li> Add the first number (1) to all the existing subsets to create new subsets: [[], [1]]; </li>
+            <li> Add the second number (5) to all the existing subsets: [[], [1], [5], [1,5]];</li>
+            <li> Add the third number (3) to all the existing subsets: [[], [1], [5], [1,5], [3], [1,3], [5,3], [1,5,3]].</li>
+        </ol>
+        <br/>
+        <ul>
+            <li> Subsets with duplicates (easy) </li>
+            <li> String permutation by changing case (medium) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        Modified binary search: <br/> This pattern describes an efficient way to handle all problems involving Binary Search.
+        <br/>The patterns looks like this for an ascending order set:
+        <ol>
+            <li> First, find the middle of start and end. An easy way to find the middle would be: middle = (start + end) / 2. But this has a good chance of producing an integer overflow so it’s recommended that you represent the middle as: middle = start + (end — start) / 2 </li>
+            <li> If the key is equal to the number at index middle then return middle </li>
+            <li> If ‘key’ isn’t equal to the index middle:
+                <ul>
+                    <li> Check if key < arr[middle]. If it is reduce your search to end = middle — 1 </li>
+                    <li> Check if key > arr[middle]. If it is reduce your search to start = middle + 1 </li>
+                </ul>
+            </li>
+        </ol>
+        <br/>
+        <ul>
+            <li> Order agnostic Binary Search (easy) </li>
+            <li> Search in a sorted infinite array (medium) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        Top K Elements: <br/> The best data structure to keep track of ‘K’ elements is Heap. This pattern will make use of the Heap to solve multiple problems dealing with ‘K’ elements at a time from a set of given elements. The pattern looks like this:
+        <ol>
+            <li> Insert ‘K’ elements into the min-heap or max-heap based on the problem.</li>
+            <li> Iterate through the remaining numbers and if you find one that is larger than what you have in the heap, then remove that number and insert the larger one. </li>
+        </ol>
+        <br/>
+        <ul>
+            <li> Top 'K' numbers (easy) </li>
+            <li> Top 'K' frequent numbers (medium) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        K-way merge: <br/> The pattern looks like this:
+        <ol>
+            <li> Insert the first element of each array in a Min Heap.</li>
+            <li> After this, take out the smallest (top) element from the heap and add it to the merged list.</li>
+            <li> After removing the smallest element from the heap, insert the next element of the same list into the heap.</li>
+            <li> Repeat steps 2 and 3 to populate the merged list in sorted order.
+        </ol>
+        <br/>
+        <ul>
+            <li> Merge K Sorted Lists (medium) </li>
+            <li> K Pairs with large sums (hard) </li>
+        </ul>
+        <br/><br/>
+    </li>
+    <li>
+        Topological sort: <br/> Topological Sort is used to find a linear ordering of elements that have dependencies on each other. For example, if event ‘B’ is dependent on event ‘A’, ‘A’ comes before ‘B’ in topological ordering.
+        <br/><br/>
+        <ul>
+            <li> Task scheduling (medium) </li>
+            <li> Minimum height of a tree </li>
+        </ul>
+        <br/><br/>
+    </li>
 </ol>
