@@ -90,6 +90,7 @@ It’s important for any engineer, even the senior ones, to brush up on their co
             <li> While practising, also perform analysis and add the time and space complexities of the written code</li>
             <li> Generally, to improve the speed of a program, we can choose to either use an appropriate data structure or algorithm, or to use more memory. It’s a classic space and time trade off. </li>
         </ul>
+        <br/>
     </li>
     <li>
         <strong>Searching and sorting:</strong>
